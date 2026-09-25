@@ -1,0 +1,951 @@
+/* --- Variabel Warna Dasar --- */
+:root {
+    --primary: #450C3F;      /* Ungu Tua */
+    --dark-accent: #1A0317;  /* Variasi ungu hitam */
+    --lime: #B9D175;         /* Hijau Lime */
+    --light-lime: #D9EFBD;   /* Hijau Muda */
+    --cream: #F5FBDA;        /* Krem Terang */
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#D9EFBD;
+    line-height: 1.6;
+}
+
+.header{
+    height: 80px;
+    background-color: var(--primary);
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/* PERBAIKAN: Mengubah width 1100px menjadi max-width agar responsif */
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-header{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.logo{
+    font-family: cursive;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 33px;
+    font-weight: bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color: var(--lime);
+}
+
+.nav-menu{
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 15px;
+    transition: color 0.3s ease; 
+}
+
+.nav-menu a:hover{
+    color: burlywood;
+    cursor: pointer;
+}
+
+.hero-label{
+    color:rgb(220, 255, 180);
+}
+
+.hero{
+    min-height: 650px;
+    background: linear-gradient(135deg, var(--primary), var(--dark-accent));
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 0;
+}
+
+.hero-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.content{
+    width: 55%;
+    color: var(--text-light);
+}
+
+.content h1{
+    font-size: 70px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: var(--lime);
+}
+
+.content h2{
+    font-size: 25px;
+    color: var(--cream);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-description{
+    max-width: 600px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-weight:200;
+}
+
+/* --- ANIMASI TOMBOL --- */
+.button{
+    padding: 13px 24px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-decoration: none; 
+    font-weight: 500;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button{
+    display: flex;
+    gap: 20px;
+}
+
+.button-primarry{
+    background-color: var(--lime);
+    color: var(--dark-accent);
+    text-align: center;
+}
+
+.button-primarry:hover {
+    background-color: #c9e088; 
+}
+
+.button-outline{
+    background-color: var(--text-light);
+    color: var(--dark-accent);
+    text-align: center;
+}
+
+.button-outline:hover {
+    background-color: #f0f0f0; 
+}
+
+.social-media{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.social-media a{
+    text-decoration: none;
+    color:rgba(135, 210, 49, 0.552);
+    transition: color 0.3s ease; 
+}
+
+.social-media a:hover{
+    color: #c1d7a4;
+}
+
+.social-media .divider {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.picture{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture-frame{
+    height: 440px;
+    width: 330px;
+    padding: 20px;
+    border-radius : 180px 180px 20px 20px ;
+    background-color: var(--dark-accent);
+}
+
+.picture-frame img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:180px 180px 20px 20px  ;
+}
+
+.section{
+    padding: 80px 0;
+}
+
+.section-heading{
+    margin-bottom: 50px;
+    font-weight: bolder;
+}
+
+
+/* ==========================================================================
+   CSS RESPONSIVE LAYAR HP / MOBILE (Maksimal 576px) - PUSAT TENGAH
+   ========================================================================== */
+@media (max-width: 576px) {
+    /* Header & Navigasi Tengah */
+    .header {
+        height: auto;
+        padding: 15px 0;
+    }
+    .container-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    /* Bagian Hero Utama */
+    .hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    .hero-container {
+        flex-direction: column-reverse; 
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Memastikan semua teks rata tengah */
+    }
+    
+    /* Mengatur Konten Teks ke Tengah */
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memaksa komponen flex di dalamnya ke tengah */
+        text-align: center;
+    }
+    .content h1 {
+        font-size: 42px; 
+        line-height: 1.2;
+    }
+    .content h2 {
+        font-size: 18px;
+    }
+    .hero-description {
+        font-size: 14px;
+        margin: 0 auto 25px auto; /* Margin auto kiri-kanan membuat teks paragraf seimbang di tengah */
+        text-align: center;
+    }
+
+    /* Tombol Responsif HP ke Tengah */
+    .hero-button {
+        flex-direction: column; 
+        gap: 12px;
+        width: 100%;
+        max-width: 300px; /* Membatasi lebar tombol di HP agar tidak terlalu panjang */
+        margin: 0 auto; /* Menengahkan area tombol */
+    }
+    .button {
+        width: 100%;
+        display: block;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    /* Sosial Media Tengah */
+    .social-media {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    /* Bingkai Foto Profil Tengah */
+    .picture {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .picture-frame {
+        width: 260px; 
+        height: 350px;
+        margin: 0 auto; /* Memastikan bingkai benar-benar di as tengah */
+    }
+}
+
+/* --- Section About --- */
+.about {
+    background-color: var(--light-lime);
+    font-family: 'Poppins', sans-serif; /* Opsional: Rekomendasi font modern */
+}
+.section-subtitle{
+    color: var(--primary);
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+/* Bagian Teks */
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555; /* Warna teks abu-abu gelap agar nyaman dibaca */
+    margin-bottom: 20px;
+}
+
+/* Tombol Ajakan Aksi (CTA) */
+.btn-link {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.btn-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+/* Bagian Informasi Kotak */
+.about-info {
+    width: 40%;
+    background-color: var(--primary);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.info-item:last-child {
+    border-bottom: none; /* Menghilangkan garis di item terakhir */
+}
+.info-item span {
+    font-size: 15px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+.info-item strong {
+    font-size: 15px;
+    color:var(--lime);
+    font-weight: 600;
+    text-align: right;
+    padding-left: 15px;
+}
+@media (max-width: 576px) {
+    /* 1. Membalik urutan layout agar kotak info naik ke atas, teks di bawahnya */
+    .about-content {
+        flex-direction: column-reverse; 
+        align-items: center;
+        text-align: center;
+        gap: 35px; /* Jarak antar komponen vertikal */
+    }
+
+    /* 2. Mengatur pembungkus teks agar menjadi flex vertikal */
+    .about-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text h3 {
+        font-size: 22px; /* Ukuran judul dikecilkan sedikit agar pas di HP */
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        font-size: 14px; /* Teks deskripsi lebih proporsional */
+        margin-bottom: 25px;
+        order: 1; /* Memastikan teks paragraf tetap di atas tombol */
+    }
+
+    /* 3. Memaksa tombol ajakan aksi (CTA) berada di posisi paling bawah */
+    .btn-link {
+        display: block;
+        width: 100%;
+        max-width: 280px; /* Batasi lebar tombol agar tidak terlalu panjang */
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 15px;
+        margin: 0 auto;
+        order: 2; /* Menempatkan tombol di urutan terakhir setelah paragraf */
+    }
+
+    /* 4. Kotak Informasi Detail (Naik ke atas teks karena efek column-reverse) */
+    .about-info {
+        width: 100%; /* Lebar kotak menjadi penuh memenuhi layar HP */
+        padding: 20px 15px; /* Memperkecil padding dalam agar tidak sempit */
+        border-radius: 10px;
+    }
+
+    .info-item {
+        padding: 12px 0;
+    }
+
+    .info-item span, 
+    .info-item strong {
+        font-size: 13px; /* Ukuran font disesuaikan agar tidak patah berantakan */
+    }
+}
+.skills {
+    background-color: var(--light-lime); /* Menggunakan variabel cream milikmu dengan fallback warna cream */
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.skill-content {
+    display: flex;
+    gap: 30px;
+} 
+
+.skill-card {
+    background-color: var(--cream);
+    padding: 30px;
+    border-radius: 20px;
+    /* Box shadow abu-abu pilihan Anda yang diperhalus pudarannya (blur 12px) */
+    box-shadow: 5px 4px 12px rgba(128, 128, 128, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek interaktif modern saat kartu disorot mouse */
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.6);
+}
+
+/* Mengatur nomor dan level PRO berjejer di kanan-kiri */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}       
+
+.skill-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #86257941;
+}
+
+/* Mengubah tampilan border atas menjadi badge kapsul mini yang modis */
+.skill-level {
+    font-size: 12px;
+    font-weight: bold;
+    background-color:var(--primary) ; /* Efek gelap transparan tipis di atas hijau */
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: var(--lime);
+}
+
+.skill-card h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 13px;
+    color: var(--dark-accent);
+}
+
+.skill-card p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    color:var(--text-dark);
+    margin: 0; /* Menghapus margin bawaan p dan merapikan duplikasi lama */
+}
+
+.tools{
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+
+}
+.tools {
+    margin-top: 50px;
+}
+
+.tools h4 {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--dark-accent);
+    margin-bottom: 20px;
+}
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap; /* Supaya badge otomatis turun ke bawah jika layar sempit */
+    gap: 12px;
+}
+
+.tool-badge {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--lime);
+    background-color: var(--primary) ; /* Menggunakan opasitas warna hijau pastel kamu */
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 239, 189, 0.8);
+    transition: all 0.2s ease;
+}
+.tool-badge:hover {
+    transform: translateY(-6px);
+    
+}
+@media (max-width: 576px) {
+    .skills {
+        padding: 40px 15px; /* Mengurangi padding agar ruang konten lebih luas */
+    }
+
+    /* 1. Menyusun kartu skill berjejer ke bawah dan rata tengah */
+    .skill-content {
+        flex-direction: column;
+        gap: 25px; /* Jarak vertikal antar kartu */
+    } 
+
+    .skill-card {
+        padding: 20px; /* Sedikit memperkecil padding dalam kartu di HP */
+        text-align: center; /* Menengahkan teks di dalam kartu */
+    }
+
+    /* Efek interaktif disesuaikan agar tidak terlalu ekstrem saat di-tap di HP */
+    .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 4px 6px 15px rgba(128, 128, 128, 0.4);
+    }
+
+    .skill-card h3 {
+        font-size: 20px; /* Dikecilkan dari 23px agar pas di layar sempit */
+        margin-bottom: 10px;
+    }
+
+    /* Mengubah text-align dari justify (rata kanan-kiri) menjadi center di HP */
+    .skill-card p {
+        text-align: center; 
+        font-size: 13.5px;
+    }
+
+    /* 2. Bagian Tools & Badges */
+    .tools {
+        margin-top: 35px;
+        text-align: center; /* Menengahkan judul Tools */
+    }
+
+    .tools h4 {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
+    }
+
+    .tools-list {
+        justify-content: center; /* Memastikan kumpulan badge perkakas ada di tengah layar */
+        gap: 10px;
+    }
+
+    .tool-badge {
+        font-size: 12px; /* Dikecilkan sedikit agar muat banyak di layar HP */
+        padding: 6px 12px;
+    }
+    
+    .tool-badge:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.projects{
+    background-color: var(--light-lime);
+    font-family: 'Poppins', sans-serif;
+}
+.section-heading p{
+    color: var(--primary);
+}
+.project-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.project-card{
+    height: 300px;
+    width: auto;
+    display: flex;
+    gap: 40px;
+    padding: 25px;
+    background-color:var(--text-light);
+    border-radius: 20px;
+    align-items: center;
+}
+.project-image{
+    width: 300px;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden ;
+    border-radius: 8px;
+}
+.project-image img{
+    width: 100%;
+    height: 100%;
+}
+.project-content{
+    padding: 15px 0 ;
+}
+.project-category{
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color:  #4e810b;
+    margin-bottom: 12px;
+}
+.project-content h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.project-description{
+    font-size: 14px;
+    color:#555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.project-tech{
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+.project-tech span {
+    padding: 6px 14px;
+    background-color: #e2f0d3; /* Warna hijau pastel lembut */
+    color: #4e810b;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background-color: var(--lime, #c1d7a4);
+    color: #3b6307;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.project-link:hover {
+    background-color: var(--light-lime);
+    color: #ffffff;
+}
+@media (max-width: 576px) {
+    .projects {
+        padding: 40px 15px; /* Mengurangi padding luar agar hemat ruang */
+    }
+
+    /* 1. Mengubah struktur kartu proyek menjadi vertikal */
+    .project-card {
+        height: auto; /* PERBAIKAN PENTING: Menghilangkan tinggi kaku 300px agar tidak meluap */
+        flex-direction: column; /* Gambar di atas, konten teks di bawahnya */
+        gap: 20px;
+        padding: 20px;
+        text-align: center; /* Meratakan semua teks di dalam kartu ke tengah */
+        align-items: center;
+    }
+
+    /* 2. Menyesuaikan ukuran gambar proyek di HP */
+    .project-image {
+        width: 100%; /* Gambar melebar mengikuti lebar kartu */
+        max-width: 240px; /* Batasi lebar maksimal agar tidak terlalu raksasa */
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memaksa komponen teks di dalamnya ke tengah */
+    }
+
+    .project-category {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .project-content h3 {
+        font-size: 22px; /* Dikecilkan dari 28px agar pas dalam satu baris layar HP */
+        margin-bottom: 10px;
+    }
+
+    /* Mengubah text-align dari justify menjadi center agar rapi di layar sempit */
+    .project-description {
+        font-size: 13.5px;
+        text-align: center; 
+        margin-bottom: 20px;
+    }
+
+    /* 3. Menyesuaikan deretan tag teknologi ke tengah */
+    .project-tech {
+        justify-content: center;
+        flex-wrap: wrap; /* Tombol tag otomatis turun kebawah jika tidak muat */
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .project-tech span {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+
+    /* 4. Mengatur tombol link proyek agar simetris di tengah */
+    .project-link {
+        width: 100%;
+        max-width: 240px; /* Batasi lebar tombol agar proporsional */
+        justify-content: center; /* Mengetengahkan teks dan ikon di dalam tombol */
+        padding: 12px 20px;
+        font-size: 13.5px;
+    }
+}
+.experience{
+    background-color: var(--light-lime);
+    font-family: 'Poppins', sans-serif;
+}
+.timline-content {
+    background-color: var(--primary );
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.timline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.timline-content h4 {
+    font-size: 1rem;
+    color: var(--lime);
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.timline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--cream);
+}
+.contact{
+    background-color: var(--lime);
+    font-family: 'Poppins', sans-serif;
+}
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.contact-text {
+    width: 55%;
+}
+
+.contact-label1 {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-text h2 {
+    color: inherit;
+    font-size: 45px;
+    margin-bottom: 20px;
+    line-height: 45px;
+}
+
+.contact-label2 {
+    font-weight: 200px;
+    color: var(--text-dark);
+}
+.contact-info{
+    margin: 0%;
+}
+.contact-item {
+    background-color: var(--light-lime);
+    padding: 15px ;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+    margin-bottom: 20px;
+    width: 300px;
+    
+}
+
+.contact-item span {
+    padding-left : 20px; 
+    display : block;
+    font-weight: bold;
+    margin-bottom:5px;
+    color:var(--primary) ;
+}
+.contact-item strong {
+    font-size: 14px;
+    color: var(--dark-accent);
+    padding-left: 20px;
+
+}
+footer{
+    padding: 20px;
+    background-color: #450C3F;
+    font-family: 'Poppins', sans-serif;
+}
+.content-footer {
+    color: var(--text-light);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.content-footer p {
+    font-size: 14px;
+    font-weight: 200;
+}
+@media (max-width: 576px) {
+    .contact {
+        padding: 40px 15px; /* Mengurangi padding luar agar lebih hemat ruang */
+    }
+
+    /* 1. Mengubah susunan box kontak menjadi vertikal dan rata tengah */
+    .contact-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px; /* Jarak vertikal antar bagian teks dan daftar kartu */
+    }
+
+    /* 2. Mengatur area teks contact */
+    .contact-text {
+        width: 100%; /* Memenuhi seluruh lebar layar HP */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-label1 {
+        margin-bottom: 12px;
+    }
+
+    .contact-text h2 {
+        font-size: 28px; /* Dikecilkan dari 45px agar tidak meluap keluar layar */
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .contact-label2 {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* 3. Mengatur area list kartu informasi kontak */
+    .contact-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memastikan kartu-kartu berada di posisi tengah */
+    }
+
+    .contact-item {
+        width: 100%;
+        max-width: 320px; /* Mengubah lebar kaku 300px menjadi dinamis dengan batas maksimal */
+        padding: 15px;
+        text-align: left; /* Teks di dalam kartu tetap rata kiri agar ikon/bullet rapi */
+        margin-bottom: 15px;
+    }
+
+    /* 4. Mengatur Footer agar rata tengah */
+    footer {
+        padding: 25px 15px;
+    }
+
+    .content-footer {
+        flex-direction: column; /* Menyusun isi teks footer ke bawah */
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .content-footer p {
+        font-size: 13px;
+    }
+}
