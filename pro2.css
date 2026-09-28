@@ -23,6 +23,8 @@ body{
 .header{
     height: 80px;
     background-color: var(--primary);
+    position: sticky;
+    top: 0;
 }
 
 img{
@@ -57,10 +59,13 @@ img{
 .logo span{
     color: var(--lime);
 }
-
+.nav{
+    position: fixed;
+}
 .nav-menu{
     display: flex;
     gap: 30px;
+    
 }
 
 .nav-menu a {
